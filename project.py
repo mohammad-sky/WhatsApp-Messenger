@@ -108,19 +108,20 @@ class MainWindow(QMainWindow):
 
 
 
-        # radio_button3 = QRadioButton(self)
-        # # setting geometry of radio button
-        # radio_button3.setGeometry(650, 333, 200, 40)
-        # # setting text to radio button
-        # radio_button3.setText("Based on numbering")
         
-        
-        # radio_button4 = QRadioButton(self)
-        # # setting geometry of radio button
-        # radio_button4.setGeometry(850, 333, 200, 40)
-        # # setting text to radio button
-        # radio_button4.setText("Send a file to everyone") 
-        
+
+        cs1 = QRadioButton("Send a file to everyone",self)
+        cs1.setGeometry(850, 333, 200, 40)
+
+        cs2 = QRadioButton("Based on numbering",self)
+        cs2.setGeometry(650, 333, 200, 40)
+
+
+        cs_group = QButtonGroup(self)
+        cs_group.addButton(cs1)
+        cs_group.addButton(cs2)
+
+                
         
         
         
@@ -139,6 +140,15 @@ class MainWindow(QMainWindow):
         mp3 = radio_button4
         self.mp3 = mp3
           
+            
+        Based_on_numbering = cs2
+        self.Based_on_numbering = Based_on_numbering
+          
+          
+        to_everyone = cs1
+        self.to_everyone = to_everyone
+        
+        
         self.show()
 
         
