@@ -1,3 +1,4 @@
+from os import name
 import time
 import glob
 from alright import WhatsApp
@@ -8,6 +9,9 @@ from PyQt5 import QtCore, QtWidgets ,QtGui
 from PyQt5.QtWidgets import QMainWindow, QWidget, QLabel, QLineEdit ,QRadioButton ,QPushButton 
 # from PyQt5.QtWidgets import QPushButton
 from PyQt5.QtCore import QSize    
+import openpyxl
+from openpyxl.cell import cell 
+import os
 
 
 
@@ -47,6 +51,9 @@ class MainWindow(QMainWindow):
 
 
 
+
+
+        #button of group
         a = QPushButton('جیم', self)
         a.clicked.connect(self.j_group)
         a.resize(150,50)
@@ -70,6 +77,10 @@ class MainWindow(QMainWindow):
 
 
 
+        path = "name_of_ masenger.xlsx"
+        wb_obj = openpyxl.load_workbook(path) 
+        self.sheet_obj = wb_obj.active 
+        
 
 
 
@@ -105,24 +116,26 @@ class MainWindow(QMainWindow):
         radio_button4.setText("mp3") 
   
   
-
-
-
         
-
+        
+        
         cs1 = QRadioButton("Send a file to everyone",self)
         cs1.setGeometry(850, 333, 200, 40)
 
         cs2 = QRadioButton("Based on numbering",self)
         cs2.setGeometry(650, 333, 200, 40)
 
+        # cs3 = QRadioButton("Expert",self)
+        # cs3.move(130, 60)
 
         cs_group = QButtonGroup(self)
         cs_group.addButton(cs1)
         cs_group.addButton(cs2)
+        # cs_group.addButton(cs3)
 
                 
-        
+                
+                
         
         
         
@@ -139,8 +152,7 @@ class MainWindow(QMainWindow):
       
         mp3 = radio_button4
         self.mp3 = mp3
-          
-            
+        
         Based_on_numbering = cs2
         self.Based_on_numbering = Based_on_numbering
           
@@ -306,6 +318,7 @@ class MainWindow(QMainWindow):
 
 
 
+
     def b_group(self):
         messenger = WhatsApp()
 
@@ -367,13 +380,6 @@ class MainWindow(QMainWindow):
             # messenger.logout()             
             
                     
-            
-
-
-
-
-
-
     def a_group(self):
         messenger = WhatsApp()
 
