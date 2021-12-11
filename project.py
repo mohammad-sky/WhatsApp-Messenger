@@ -143,91 +143,153 @@ class MainWindow(QMainWindow):
 
         
         
-        
     def j_group(self):
         messenger = WhatsApp()
+        if self.Based_on_numbering.isChecked() ==True:
+            if self.pdf.isChecked() ==True:
+                # list_1=[glob.glob(f"{self.line2.text()}/*.jpg")]
+                list_1=[]
+                list_1.append(glob.glob(f"{self.line2.text()}/*.docx"))
+                list_1.append(glob.glob(f"{self.line2.text()}/*.pptx"))
+                list_1.append(glob.glob(f"{self.line2.text()}/*.xlsx"))
+                list_1.append(glob.glob(f"{self.line2.text()}/*.pdf"))
+                list_2=list_1[0]
+                
+                
 
-        if self.pdf.isChecked() ==True:
-            # list_1=[glob.glob(f"{self.line2.text()}/*.jpg")]
-            list_1=[]
-            list_1.append(glob.glob(f"{self.line2.text()}/*.docx"))
-            list_1.append(glob.glob(f"{self.line2.text()}/*.pptx"))
-            list_1.append(glob.glob(f"{self.line2.text()}/*.xlsx"))
-            list_1.append(glob.glob(f"{self.line2.text()}/*.pdf"))
-            list_2=list_1[0]
-            names =["Negar","Davod"]
-            time.sleep(20)
-            for i in names:
-                for r in list_1:
-                    for x in r:                   
-                        if x.count(i)==1:
-                            messenger.find_by_username(i)
-                            messenger.send_file(x)
-                            messenger.send_message(self.line1.text()) 
-                            time.sleep(5)   
-            time.sleep(30)
-            # messenger.logout()
-        elif self.Image.isChecked() ==True:
-            # list_1=[glob.glob(f"{self.line2.text()}/*.jpg")]
-            list_1=[]
-            list_1.append(glob.glob(f"{self.line2.text()}/*.jpg"))
-            list_1.append(glob.glob(f"{self.line2.text()}/*.png"))
-            list_1.append(glob.glob(f"{self.line2.text()}/*.svg"))
-            list_1.append(glob.glob(f"{self.line2.text()}/*.webp"))
-            print(list_1)
+                
+                names =[]
+                for i in range(2):
+                    cell_obj = self.sheet_obj.cell(row = (i+1), column = 2)
+                    names.append(cell_obj.value)
 
-            list_2=list_1[0]
-            print(list_2)
+                time.sleep(20)
+                for i in names:
+                    for r in list_1:
+                        for x in r:   
+                            string=os.path.basename(x)
+                            string1=os.path.splitext(string)[0]
+                            
 
-            names =["Davod","Negar"]
-            time.sleep(20)
-            for i in names:
-                for r in list_1:
-                    for x in r:
-                        if x.count(i)==1:
-                            messenger.find_by_username(i)
-                            messenger.send_picture(x)
-                            messenger.send_message(self.line1.text()) 
-                            time.sleep(10)   
-            time.sleep(45)
-            # messenger.logout()            
-        elif self.Video.isChecked() ==True:
-            list_1=[]
-            list_1.append(glob.glob(f"{self.line2.text()}/*.mp4"))
-            list_1.append(glob.glob(f"{self.line2.text()}/*.avi"))
-            list_1.append(glob.glob(f"{self.line2.text()}/*.mov"))
-            list_1.append(glob.glob(f"{self.line2.text()}/*.wmv"))    
-                    
-            list_2=list_1[0]
-            names =["Negar","Davod"]
-            time.sleep(20)
-            for i in names:
-                for r in list_1:
-                    for x in r:
-                        if x.count(i)==1:
-                            messenger.find_by_username(i)
-                            messenger.send_video(x)
-                            messenger.send_message(self.line1.text()) 
-                            time.sleep(15)   
-            time.sleep(60)
-            # messenger.logout() 
-        elif self.mp3.isChecked() ==True:
-            list_1=[glob.glob(f"{self.line2.text()}/*.mp3")]
-            list_2=list_1[0]
-            names =["Negar","Davod"]
-            time.sleep(20)
-            for i in names:
-                for x in list_2:
-                    if x.count(i)==1:
-                        messenger.find_by_username(i)
-                        messenger.send_file(x)
-                        messenger.send_message(self.line1.text()) 
-                        time.sleep(15)   
-            time.sleep(60)
-            # messenger.logout()             
+                            if f"{string1}"==f"{(names.index(i))+1}":
+
+                                messenger.find_by_username(i)
+                                messenger.send_file(x)
+                                messenger.send_message(self.line1.text()) 
+                                time.sleep(5)   
+                time.sleep(30)
+                # messenger.logout()
+                
+                
+                
+                
+            elif self.Image.isChecked() ==True:
+                # list_1=[glob.glob(f"{self.line2.text()}/*.jpg")]
+                list_1=[]
+                list_1.append(glob.glob(f"{self.line2.text()}/*.jpg"))
+                list_1.append(glob.glob(f"{self.line2.text()}/*.png"))
+                list_1.append(glob.glob(f"{self.line2.text()}/*.svg"))
+                list_1.append(glob.glob(f"{self.line2.text()}/*.webp"))
+
+                list_2=list_1[0]
+
+                names =[]
+                for i in range(2):
+                    cell_obj = self.sheet_obj.cell(row = (i+1), column = 2)
+                    names.append(cell_obj.value)
+
+                time.sleep(20)
+                for i in names:
+                    for r in list_1:
+                        for x in r:   
+                            string=os.path.basename(x)
+                            string1=os.path.splitext(string)[0]
+                            
+
+                            if f"{string1}"==f"{(names.index(i))+1}":
+
+                                messenger.find_by_username(i)
+                                messenger.send_picture(x)
+                                messenger.send_message(self.line1.text()) 
+                                time.sleep(7)   
+                time.sleep(45)
+                # messenger.logout()          
+                
+                
+                
+                
+            elif self.Video.isChecked() ==True:
+                list_1=[]
+                list_1.append(glob.glob(f"{self.line2.text()}/*.mp4"))
+                list_1.append(glob.glob(f"{self.line2.text()}/*.avi"))
+                list_1.append(glob.glob(f"{self.line2.text()}/*.mov"))
+                list_1.append(glob.glob(f"{self.line2.text()}/*.wmv"))    
+                        
+                list_2=list_1[0]
+                
+                
+                names =[]
+                for i in range(2):
+                    cell_obj = self.sheet_obj.cell(row = (i+1), column = 2)
+                    names.append(cell_obj.value)
+
+                time.sleep(20)
+                for i in names:
+                    for r in list_1:
+                        for x in r:   
+                            string=os.path.basename(x)
+                            string1=os.path.splitext(string)[0]
+                            
+
+                            if f"{string1}"==f"{(names.index(i))+1}":
+
+                                messenger.find_by_username(i)
+                                messenger.send_video(x)
+                                messenger.send_message(self.line1.text()) 
+                                time.sleep(10)   
+                time.sleep(45)
+                # messenger.logout()          
+                
+                
+                
+            elif self.mp3.isChecked() ==True:
+                list_1=[glob.glob(f"{self.line2.text()}/*.mp3")]
+                list_2=list_1[0]
+                
+                
+                
+                
+                names =[]
+                for i in range(2):
+                    cell_obj = self.sheet_obj.cell(row = (i+1), column = 2)
+                    names.append(cell_obj.value)
+
+                time.sleep(20)
+                for i in names:
+                    for r in list_1:
+                        for x in r:   
+                            string=os.path.basename(x)
+                            string1=os.path.splitext(string)[0]
+                            
+
+                            if f"{string1}"==f"{(names.index(i))+1}":
+
+                                messenger.find_by_username(i)
+                                messenger.send_file(x)
+                                messenger.send_message(self.line1.text()) 
+                                time.sleep(10)   
+                time.sleep(45)
+                # messenger.logout()      
+                
+                
+                
+                
+                
+                
+        elif self.to_everyone.isChecked() ==True:
+            pass         
+                
             
-        
-
 
 
 
