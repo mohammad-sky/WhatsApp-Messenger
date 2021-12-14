@@ -116,6 +116,14 @@ class MainWindow(QMainWindow):
         radio_button4.setText("mp3") 
   
   
+
+        
+        radio_button5 = QRadioButton(self)
+        # setting geometry of radio button
+        radio_button5.setGeometry(520, 333, 100, 40)
+        # setting text to radio button
+        radio_button5.setText("text") 
+        
         
         
         
@@ -135,8 +143,8 @@ class MainWindow(QMainWindow):
 
                 
                 
-                
-        
+        text = radio_button5
+        self.text = text
         
         
         pdf = radio_button3
@@ -152,6 +160,8 @@ class MainWindow(QMainWindow):
       
         mp3 = radio_button4
         self.mp3 = mp3
+        
+        
         
         Based_on_numbering = cs2
         self.Based_on_numbering = Based_on_numbering
@@ -297,12 +307,7 @@ class MainWindow(QMainWindow):
                                 time.sleep(10)   
                 time.sleep(45)
                 # messenger.logout()      
-                
-                
-                
-                
-                
-                
+
         elif self.to_everyone.isChecked() ==True:
             if self.pdf.isChecked() ==True:
 
@@ -363,10 +368,21 @@ class MainWindow(QMainWindow):
                     messenger.send_message(self.line1.text()) 
                     time.sleep(5) 
                 time.sleep(20)
-                
 
 
-
+        elif self.text.isChecked()==True:
+            names =[]
+            for i in range(2):
+                cell_obj = self.sheet_obj.cell(row = (i+1), column = 2)
+                names.append(cell_obj.value)    
+                time.sleep(20)
+                print(names)
+            
+            for i in names:
+                messenger.find_by_username(i)
+                messenger.send_message(self.line1.text()) 
+                time.sleep(1) 
+            time.sleep(20)
 
 
 
@@ -512,12 +528,85 @@ class MainWindow(QMainWindow):
                 
                 
                 
-                
-                
-                
+             
         elif self.to_everyone.isChecked() ==True:
-            pass         
+            if self.pdf.isChecked() ==True:
+
+                names =[]
+                for i in range(2):
+                    cell_obj = self.sheet_obj.cell(row = (i+1), column = 2)
+                    names.append(cell_obj.value)    
+                time.sleep(20)
+            
+                for i in names:
+                    messenger.find_by_username(i)
+                    messenger.send_file(self.line2.text())
+                    messenger.send_message(self.line1.text()) 
+                    time.sleep(5) 
+                time.sleep(20)
                 
+                
+            elif self.Image.isChecked() ==True:
+                
+                names =[]
+                for i in range(2):
+                    cell_obj = self.sheet_obj.cell(row = (i+1), column = 2)
+                    names.append(cell_obj.value)    
+                time.sleep(20)
+            
+                for i in names:
+                    messenger.find_by_username(i)
+                    messenger.send_picture(self.line2.text())
+                    messenger.send_message(self.line1.text()) 
+                    time.sleep(5) 
+                time.sleep(20)
+
+
+            elif self.Video.isChecked() ==True:
+                names =[]
+                for i in range(2):
+                    cell_obj = self.sheet_obj.cell(row = (i+1), column = 2)
+                    names.append(cell_obj.value)    
+                time.sleep(20)
+            
+                for i in names:
+                    messenger.find_by_username(i)
+                    messenger.send_video(self.line2.text())
+                    messenger.send_message(self.line1.text()) 
+                    time.sleep(5) 
+                time.sleep(20)
+
+            elif self.mp3.isChecked() ==True:
+                names =[]
+                for i in range(2):
+                    cell_obj = self.sheet_obj.cell(row = (i+1), column = 2)
+                    names.append(cell_obj.value)    
+                time.sleep(20)
+            
+                for i in names:
+                    messenger.find_by_username(i)
+                    messenger.send_file(self.line2.text())
+                    messenger.send_message(self.line1.text()) 
+                    time.sleep(5) 
+                time.sleep(20)
+                
+
+        elif self.text.isChecked()==True:
+            names =[]
+            for i in range(2):
+                cell_obj = self.sheet_obj.cell(row = (i+1), column = 2)
+                names.append(cell_obj.value)    
+                time.sleep(20)
+                print(names)
+            
+            for i in names:
+                messenger.find_by_username(i)
+                messenger.send_message(self.line1.text()) 
+                time.sleep(1) 
+            time.sleep(20)
+
+
+
             
                 
     def a_group(self):
@@ -659,15 +748,84 @@ class MainWindow(QMainWindow):
                 # messenger.logout()      
                 
                 
-                
-                
-                
-                
         elif self.to_everyone.isChecked() ==True:
-            pass         
-                
+            if self.pdf.isChecked() ==True:
+
+                names =[]
+                for i in range(2):
+                    cell_obj = self.sheet_obj.cell(row = (i+1), column = 2)
+                    names.append(cell_obj.value)    
+                time.sleep(20)
             
+                for i in names:
+                    messenger.find_by_username(i)
+                    messenger.send_file(self.line2.text())
+                    messenger.send_message(self.line1.text()) 
+                    time.sleep(5) 
+                time.sleep(20)
                 
+                
+            elif self.Image.isChecked() ==True:
+                
+                names =[]
+                for i in range(2):
+                    cell_obj = self.sheet_obj.cell(row = (i+1), column = 2)
+                    names.append(cell_obj.value)    
+                time.sleep(20)
+            
+                for i in names:
+                    messenger.find_by_username(i)
+                    messenger.send_picture(self.line2.text())
+                    messenger.send_message(self.line1.text()) 
+                    time.sleep(5) 
+                time.sleep(20)
+
+
+            elif self.Video.isChecked() ==True:
+                names =[]
+                for i in range(2):
+                    cell_obj = self.sheet_obj.cell(row = (i+1), column = 2)
+                    names.append(cell_obj.value)    
+                time.sleep(20)
+            
+                for i in names:
+                    messenger.find_by_username(i)
+                    messenger.send_video(self.line2.text())
+                    messenger.send_message(self.line1.text()) 
+                    time.sleep(5) 
+                time.sleep(20)
+
+            elif self.mp3.isChecked() ==True:
+                names =[]
+                for i in range(2):
+                    cell_obj = self.sheet_obj.cell(row = (i+1), column = 2)
+                    names.append(cell_obj.value)    
+                time.sleep(20)
+            
+                for i in names:
+                    messenger.find_by_username(i)
+                    messenger.send_file(self.line2.text())
+                    messenger.send_message(self.line1.text()) 
+                    time.sleep(5) 
+                time.sleep(20)
+                
+
+        elif self.text.isChecked()==True:
+            names =[]
+            for i in range(2):
+                cell_obj = self.sheet_obj.cell(row = (i+1), column = 2)
+                names.append(cell_obj.value)    
+                time.sleep(20)
+                print(names)
+            
+            for i in names:
+                messenger.find_by_username(i)
+                messenger.send_message(self.line1.text()) 
+                time.sleep(1) 
+            time.sleep(20)
+
+
+      
             
   
 
