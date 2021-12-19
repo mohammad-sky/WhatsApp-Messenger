@@ -398,19 +398,13 @@ class MainWindow(QMainWindow):
             
                 
     def a_group(self):
-        self.path = "name_of_ masenger.xlsx"
-
         self.realy("name_of_ masenger.xlsx")
         
         
     def b_group(self):
-        self.path = "name_of_ masenger.xlsx"
-
         self.realy("name_of_ masenger.xlsx")
   
     def j_group(self):
-        self.path = "name_of_ masenger.xlsx"
-
         self.realy("name_of_ masenger.xlsx")
 
 
