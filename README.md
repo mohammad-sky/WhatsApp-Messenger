@@ -20,6 +20,12 @@ User names in Excel file are based on the name saved in your WhatsApp
 You can choose different submission methods, for example send a text to users or send a file with text to all users or send a separate file for each user but the same text
 
 
+This program can supports many formats 
+
+This program supports most video, photo and file formats
+
+But for audio, it only supports mp3 format
+
 
 
 
