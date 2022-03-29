@@ -26,6 +26,7 @@ This program supports most video, photo and file formats
 
 But for audio, it only supports mp3 format
 
+You must enter the address of the file or folder in the address field of the program
 
 
 
