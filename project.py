@@ -18,11 +18,11 @@ import os
 class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
-        self.setWindowIcon(QtGui.QIcon("ArmNikan.png"))
+        self.setWindowIcon(QtGui.QIcon("logo.png"))
 
 
         self.setMinimumSize(QSize(1200, 600))    
-        self.setWindowTitle("Nikan masenger") 
+        self.setWindowTitle("whatsapp masenger") 
         self.setStyleSheet("background: Blue Turquoise")  
 
 
@@ -54,33 +54,27 @@ class MainWindow(QMainWindow):
 
 
         #button of group
-        a = QPushButton('جیم', self)
+        a = QPushButton('group 1', self)
         a.clicked.connect(self.j_group)
         a.resize(150,50)
         a.move(250, 450)     
         a.setStyleSheet("background-color:  lightblue")
 
         
-        b = QPushButton('ب', self)
+        b = QPushButton('group 2', self)
         b.clicked.connect(self.b_group)
         b.resize(150,50)
         b.move(500, 450)   
         b.setStyleSheet("background-color:  lightblue")
 
         
-        j = QPushButton('الف', self)
+        j = QPushButton('group 3', self)
         j.clicked.connect(self.a_group)
         j.resize(150,50)
         j.move(750, 450)      
         j.setStyleSheet("background-color:  lightblue")
 
 
-
-
-        # path = "name_of_ masenger.xlsx"
-        # wb_obj = openpyxl.load_workbook(path) 
-        # self.sheet_obj = wb_obj.active 
-        
 
 
 
@@ -184,7 +178,6 @@ class MainWindow(QMainWindow):
         
         if self.Based_on_numbering.isChecked() ==True:
             if self.pdf.isChecked() ==True:
-                # list_1=[glob.glob(f"{self.line2.text()}/*.jpg")]
                 list_1=[]
                 list_1.append(glob.glob(f"{self.line2.text()}/*.docx"))
                 list_1.append(glob.glob(f"{self.line2.text()}/*.pptx"))
@@ -215,11 +208,9 @@ class MainWindow(QMainWindow):
                                 messenger.send_message(self.line1.text()) 
                                 time.sleep(5)   
                 time.sleep(30)
-                # messenger.logout()
                 
                 
             elif self.Image.isChecked() ==True:
-                # list_1=[glob.glob(f"{self.line2.text()}/*.jpg")]
                 list_1=[]
                 list_1.append(glob.glob(f"{self.line2.text()}/*.jpg"))
                 list_1.append(glob.glob(f"{self.line2.text()}/*.png"))
@@ -248,7 +239,6 @@ class MainWindow(QMainWindow):
                                 messenger.send_message(self.line1.text()) 
                                 time.sleep(7)   
                 time.sleep(45)
-                # messenger.logout()          
                 
                         
             elif self.Video.isChecked() ==True:
@@ -398,14 +388,14 @@ class MainWindow(QMainWindow):
             
                 
     def a_group(self):
-        self.realy("name_of_ masenger.xlsx")
+        self.realy("group1.xlsx")
         
         
     def b_group(self):
-        self.realy("name_of_ masenger.xlsx")
+        self.realy("group2.xlsx")
   
     def j_group(self):
-        self.realy("name_of_ masenger.xlsx")
+        self.realy("group3.xlsx")
 
 
 if __name__ == "__main__":
