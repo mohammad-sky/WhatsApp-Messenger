@@ -32,3 +32,6 @@ You must enter the address of the file or folder in the address field of the pro
 
 # how to use:
 
+<img width="211" alt="image" src="https://user-images.githubusercontent.com/83414472/160900790-282315d7-0079-4f16-b5eb-1b24b527b6d4.png">
+
+
