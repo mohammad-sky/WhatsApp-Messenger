@@ -39,7 +39,8 @@ The first column is the name of the files, which is named after the number, but 
 
 The second column is the user's saved name in your WhatsApp
 
-
+For example, a file named 1 is sent to Sepehr
+Of course, this happens in mode base on numbring
 
 # Contributions
 
