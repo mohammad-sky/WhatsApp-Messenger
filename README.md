@@ -42,6 +42,9 @@ The second column is the user's saved name in your WhatsApp
 For example, a file named 1 is sent to Sepehr
 Of course, this happens in mode Based on numbering
 
+
+When you use the "Send a file to everyone" mode, numbering is no longer important, you just have to give the address of the file
+
 # Contributions
 
 **WhatsApp-Messenger** is an open-source package under **MIT** license, so contributions are warmly welcome whether that be a code , docs or typo just fork it.
