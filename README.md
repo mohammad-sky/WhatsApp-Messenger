@@ -59,6 +59,7 @@ If this program was useful to you, please give this program a star so that other
 
 # Problem
 Sorry, this app does not have any cool graphics
+
 I will fix it in later versions
 
 
