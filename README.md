@@ -1,4 +1,4 @@
-# WhatsApp-Messenger.
+# WhatsApp-Messenger
 
 
 This app is for sending each user's file to the user on WhatsApp
