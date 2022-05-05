@@ -29,6 +29,7 @@ But for audio, it only supports mp3 format
 
 You must enter the address of the file or folder in the address field of the program
 
+<img width="599" alt="image" src="https://user-images.githubusercontent.com/83414472/167010771-41763cf1-9eeb-484c-af1d-3eed5910c6a1.png">
 
 
 # how to use:
