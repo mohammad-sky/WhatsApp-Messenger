@@ -2,7 +2,7 @@ from os import name
 import time
 import glob
 from alright import WhatsApp
-from PyQt5.QtWidgets import * 
+from PyQt5.QtWidgets import * 3
 from PyQt5.QtGui import *
 import sys
 from PyQt5 import QtCore, QtWidgets ,QtGui
@@ -107,7 +107,7 @@ class MainWindow(QMainWindow):
         # setting geometry of radio button
         radio_button4.setGeometry(430, 333, 100, 40)
         # setting text to radio button
-        radio_button4.setText("mp3") 
+        radio_button4.setText("audio") 
   
   
 
