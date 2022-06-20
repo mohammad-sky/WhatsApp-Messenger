@@ -37,6 +37,7 @@ class MainWindow(QMainWindow):
         self.line1.resize(1000, 128)
         self.nameLabel1.move(50, 80)
         self.line1.setStyleSheet("background-color: Violet")
+        self.line1.setPlaceholderText("text")
 
 
         self.nameLabel2 = QLabel(self)
@@ -48,6 +49,8 @@ class MainWindow(QMainWindow):
         self.line2.resize(1000, 64)
         self.nameLabel2.move(20, 232)
         self.line2.setStyleSheet("background-color: Violet")
+        self.line2.setPlaceholderText("address")
+
 
 
 
